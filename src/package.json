@@ -1,0 +1,26 @@
+{
+  "name": "ng2-responsive-table",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pluritech/ng2-responsive-table"
+  },
+  "author": {
+    "name": "mduraes1994",
+    "email": "mduraes1994@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pluritech/ng2-responsive-table/issues"
+  },
+  "module": "ng2-responsive-table.js",
+  "typings": "ng2-responsive-table.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
