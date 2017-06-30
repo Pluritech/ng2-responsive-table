@@ -73,4 +73,4 @@ condition | a function who can receive the row, return a boolean who indicates i
 handler | a function who can receive the row and will be executed when the button is clicked
 
 ### License
-MIT © Pluritech
+MIT © [Pluritech](https://www.pluritech.com.br/)
