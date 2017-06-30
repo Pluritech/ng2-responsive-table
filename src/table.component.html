@@ -1,0 +1,33 @@
+<table class="table table-striped table-bordered">
+  <thead class="head">
+    <tr class="row">
+      <td class="column" *ngFor="let column of data?.columns">
+        <strong>{{ column.name }}</strong>
+      </td>
+      <td *ngIf="data?.actions">
+        <strong i18n="Coluna de Ações|@@tableStrongActions">Ações</strong>
+      </td>
+    </tr>
+  </thead>
+  <tbody class="body">
+    <tr class="row" *ngFor="let row of data?.rows">
+      <td class="column" *ngFor="let column of data?.columns">
+        <strong class="responsive">
+          {{ column.name }}
+        </strong>
+        {{ row[column.id] }}
+      </td>
+      <td class="column action" *ngIf="data?.actions">
+        <div *ngFor="let action of data?.actions" class="action-buttons">
+          <button class="btn btn-flat btn-block {{ action.class }}"
+          [class.btn-social]="!!action.icon"
+          (click)="action.handler(row)"
+          *ngIf="action.condition ? action.condition(row) : true">
+            <i *ngIf="action.icon" class="{{ action.icon }}"></i>
+            {{ action.name }}
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
