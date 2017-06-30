@@ -22,7 +22,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "ng2-responsive-table.js",
-    "flatModuleId": "ng2-responsive-table"
+    "flatModuleId": "@pluritech/ng2-responsive-table"
   },
   "files": [
     "./index.ts"

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
 
 export * from './table.component';
+export * from './table.content';
 
 @NgModule({
   imports: [

@@ -1,5 +1,5 @@
 {
-  "name": "ng2-responsive-table",
+  "name": "@pluritech/ng2-responsive-table",
   "version": "0.1.0",
   "scripts": {
     "build": "gulp build",
