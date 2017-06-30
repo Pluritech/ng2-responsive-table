@@ -63,6 +63,7 @@ public data: TableContent = {
 ### The TableContent type in details
 The columns of the table receive each an id. This id, has to be used in the rows to fill the table correctly.
 The actions columns, receive the following
+
  Field | Description
 ------ | ----------- 
 name   | Text of the button
@@ -72,4 +73,4 @@ condition | a function who can receive the row, return a boolean who indicates i
 handler | a function who can receive the row and will be executed when the button is clicked
 
 ### License
-MIT © mduraes1994 and lucascco
+MIT © Pluritech
