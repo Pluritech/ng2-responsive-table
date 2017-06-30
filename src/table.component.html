@@ -29,5 +29,10 @@
         </div>
       </td>
     </tr>
+    <tr *ngIf="!data?.rows?.length"  class="row">
+      <td class="column text-center" [attr.colspan]="data?.columns.length + 1">
+        {{data?.noRowsMsg || 'Nenhum registro exibido'}}
+      </td>
+    </tr>
   </tbody>
 </table>

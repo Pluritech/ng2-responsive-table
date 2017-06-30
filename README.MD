@@ -72,5 +72,7 @@ icon   | font-awesome icon to be applied to button
 condition | a function who can receive the row, return a boolean who indicates if the button should be displayed
 handler | a function who can receive the row and will be executed when the button is clicked
 
+You can also set noRowsMsg to show when no there data on table. Default is: Nenhum registro exibido
+
 ### License
 MIT © [Pluritech](https://www.pluritech.com.br/)

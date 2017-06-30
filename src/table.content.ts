@@ -2,6 +2,7 @@ export interface TableContent {
     columns: TableColumn[];
     rows: any[];
     actions: TableButton[];
+    noRowsMsg?: string
 }
 
 export interface TableColumn {
@@ -13,6 +14,6 @@ export interface TableButton {
     name: string;
     class: string;
     icon: string;
-    handler: Function;
-    condition?: Function;
+    handler(row: any):void;
+    condition?(row: any): boolean;
 }
