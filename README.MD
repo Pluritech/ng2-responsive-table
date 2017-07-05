@@ -40,8 +40,8 @@ So, in the typescript you will need:
 ```typescript
 public data: TableContent = {
     columns: [
-      {id: 'name', name: 'Nome'},
-      {id: 'age', name: 'Idade'}
+      {id: 'name', name: 'Name'},
+      {id: 'age', name: 'Age'}
     ],
     rows: [
       {name: 'Mateus', age: '23'},
@@ -73,6 +73,28 @@ condition | a function who can receive the row, return a boolean who indicates i
 handler | a function who can receive the row and will be executed when the button is clicked
 
 You can also set noRowsMsg to show when no there data on table. Default is: Nenhum registro exibido
+
+### Working with checkboxes columns
+If you need a column of checkbox in your table, where, the table header of this column will mark all registers you can do the following:
+```typescript
+    columns: [
+      {id: '', name: '', checkbox: {singleName: 'Marcar'}},
+      {id: 'name', name: 'Name'},
+      {id: 'age', name: 'Age'}
+    ],
+```
+the singleName property is the label of every checkbox on mobile screen.
+To get all the changes in the selected rows, you'll need to pass a function to the following two outputs properties:
+```html
+  <ng-table [data]="data"
+      (selectedChange)="onSelectedChange($event)"
+      (selectedChangeAll)="onSelectedChangeAll($event)"></ng-table>
+```
+ Event | Description
+------ | ----------- 
+selectedChange   | Will fire every time a single row change the selected status. The event will send the array with selecteds rows
+selectedChangeAll  | Will fire every time the table header button change the selected status. The event will send the array with selecteds rows and a boolean indicating if isAllSelected or not.
+
 
 ### License
 MIT © [Pluritech](https://www.pluritech.com.br/)
