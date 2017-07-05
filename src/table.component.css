@@ -10,6 +10,11 @@ td .responsive {
   margin-top: 5px;
 }
 
+.checkbox-column {
+  width: 35px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Force table to not be like tables anymore */
   .table, .table .head, .table .body, .table .head .column, .table .body .column, .table .body .row {

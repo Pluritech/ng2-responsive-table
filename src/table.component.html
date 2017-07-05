@@ -1,21 +1,32 @@
 <table class="table table-striped table-bordered">
   <thead class="head">
     <tr class="row">
-      <td class="column" *ngFor="let column of data?.columns">
-        <strong>{{ column.name }}</strong>
+      <td class="column" *ngFor="let column of data?.columns" [ngClass]="{'checkbox-column' : column.checkbox}">        
+        <strong *ngIf="!column.checkbox">{{ column.name }}</strong>
+        <input type="checkbox" *ngIf="column.checkbox" 
+          (change)="toggle()"
+          [hidden]="selected.length"
+          [checked]="selected.length">
+
+        <i class="glyphicon glyphicon-remove-circle text-danger" *ngIf="column.checkbox && selected.length" (click)="toggle()"></i>
       </td>
       <td *ngIf="data?.actions">
-        <strong i18n="Coluna de Ações|@@tableStrongActions">Ações</strong>
+        <strong>Ações</strong>
       </td>
     </tr>
   </thead>
   <tbody class="body">
-    <tr class="row" *ngFor="let row of data?.rows">
+    <tr class="row" *ngFor="let row of data?.rows; let i = index">
       <td class="column" *ngFor="let column of data?.columns">
-        <strong class="responsive">
+        <strong class="responsive" *ngIf="!column.checkbox">
           {{ column.name }}
         </strong>
-        {{ row[column.id] }}
+        <span *ngIf="!column.checkbox">{{ row[column.id] }}</span>
+        
+        <strong class="responsive" *ngIf="column.checkbox">
+          {{ column.checkbox.singleName }}
+        </strong>        
+        <input type="checkbox" *ngIf="column.checkbox" [checked]="exists(row)" (change)="toggle(row)">
       </td>
       <td class="column action" *ngIf="data?.actions">
         <div *ngFor="let action of data?.actions" class="action-buttons">
