@@ -1,3 +1,4 @@
+import { AllChangeEvent } from './table.events';
 import { TableContent } from './table.content';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class TableComponent implements OnInit {
 
   @Input() data: TableContent;
   @Output() selectedChange: EventEmitter<any> = new EventEmitter<any>();
-  @Output() selectedChangeAll: EventEmitter<any> = new EventEmitter<any>();
+  @Output() selectedChangeAll: EventEmitter<AllChangeEvent> = new EventEmitter<AllChangeEvent>();
   public selected: any[] = [];
 
   constructor() { }
@@ -27,17 +28,8 @@ export class TableComponent implements OnInit {
         this.selected.splice(index, 1);
       }
       this.selectedChange.emit(this.selected);
-      console.log(this.selected);
     } else {
       this.handleSelectAll();
-      this.selectedChangeAll.emit({
-        selecteds: this.selected,
-        allSelected: this.selected.length ? true : false
-      });
-      console.log({
-        selecteds: this.selected,
-        allSelected: this.selected.length ? true : false
-      });
     }
   }
 
@@ -51,6 +43,10 @@ export class TableComponent implements OnInit {
     } else {
       this.selected = this.selected.concat(this.data.rows);
     }
+    this.selectedChangeAll.emit({
+      selecteds: this.selected,
+      isAllSelected: this.selected.length ? true : false
+    });
   }
 
 }

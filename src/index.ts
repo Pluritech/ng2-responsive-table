@@ -4,6 +4,7 @@ import { TableComponent } from './table.component';
 
 export * from './table.component';
 export * from './table.content';
+export * from './table.events';
 
 @NgModule({
   imports: [
