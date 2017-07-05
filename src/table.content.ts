@@ -9,6 +9,7 @@ export interface TableColumn {
     name: string;
     id: string;
     checkbox?: TableCheckbox;
+    hasCustomColor?: true;
 }
 
 export interface TableButton {

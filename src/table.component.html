@@ -21,7 +21,10 @@
         <strong class="responsive" *ngIf="!column.checkbox">
           {{ column.name }}
         </strong>
-        <span *ngIf="!column.checkbox">{{ row[column.id] }}</span>
+        <span *ngIf="!column.checkbox" 
+          [style.color]="column.hasCustomColor ? row.color : ''">
+          {{ row[column.id] }}
+        </span>
         
         <strong class="responsive" *ngIf="column.checkbox">
           {{ column.checkbox.singleName }}
