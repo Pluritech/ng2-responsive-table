@@ -54,4 +54,14 @@ td .responsive {
     padding-right: 10px;
     white-space: nowrap;
   }
+
+}
+.area-close {
+  width: 100%;
+  height: 20px;
+}
+
+.area-close .icon-close {
+  padding: 3px;
+  cursor: pointer;
 }

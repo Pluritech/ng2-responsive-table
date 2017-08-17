@@ -4,6 +4,8 @@ export interface TableContent {
     actions: TableButton[];
     noRowsMsg?: string;
     hasInfoInLine?: boolean;
+    showCloseBtnInLine?: boolean;
+    classIconCloseInLine?: string;
 }
 
 export interface TableRow {

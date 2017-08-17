@@ -1,5 +1,5 @@
 import { AllChangeEvent } from './table.events';
-import { TableContent } from './table.content';
+import { TableContent, TableRow } from './table.content';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -35,6 +35,10 @@ export class TableComponent implements OnInit {
 
   exists(row) {
     return this.selected.indexOf(row) > -1;
+  }
+
+  public closeInfoInLine(row: TableRow) {
+    row.infoStatus = false;
   }
 
   private handleSelectAll() {

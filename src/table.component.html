@@ -35,7 +35,7 @@
         <div *ngFor="let action of data?.actions" class="action-buttons">
           <button class="btn btn-flat btn-block {{ action.class }}"
           [class.btn-social]="!!action.icon"
-          (click)="action.handler(row.data)"
+          (click)="action.handler(row)"
           *ngIf="action.condition ? action.condition(row.data) : true">
             <i *ngIf="action.icon" class="{{ action.icon }}"></i>
             {{ action.name }}
@@ -43,8 +43,11 @@
         </div>
       </td>
     </tr>
-    <tr class="row" *ngIf="data?.hasInfoInLine && row.data.infoStatus">
+    <tr class="row" *ngIf="data?.hasInfoInLine && row.infoStatus">
       <td [attr.colspan]="data?.columns.length + (data?.actions ? 1 : 0)" class="column">
+        <div (click)="closeInfoInLine(row)" *ngIf="data.showCloseBtnInLine"  class="area-close">
+            <span class="pull-right icon-close {{data.classIconCloseInLine ? data.classIconCloseInLine : 'glyphicon glyphicon-remove'}}" aria-hidden="true"></span>
+        </div>
         <div [innerHtml]="row.infoInline"></div>
       </td>
     </tr>
