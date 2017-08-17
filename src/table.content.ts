@@ -1,8 +1,16 @@
 export interface TableContent {
     columns: TableColumn[];
-    rows: any[];
+    rows: TableRow[];
     actions: TableButton[];
     noRowsMsg?: string;
+    hasInfoInLine?: boolean;
+}
+
+export interface TableRow {
+    data: any;
+    infoInline?: string;
+    infoStatus?: boolean;
+    color?: string;
 }
 
 export interface TableColumn {

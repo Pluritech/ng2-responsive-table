@@ -15,32 +15,37 @@
       </td>
     </tr>
   </thead>
-  <tbody class="body">
-    <tr class="row" *ngFor="let row of data?.rows; let i = index">
+  <tbody class="body" *ngFor="let row of data?.rows; let i = index">
+    <tr class="row" >
       <td class="column" *ngFor="let column of data?.columns">
         <strong class="responsive" *ngIf="!column.checkbox">
           {{ column.name }}
         </strong>
         <span *ngIf="!column.checkbox" 
           [style.color]="column.hasCustomColor ? row.color : ''">
-          {{ row[column.id] }}
+          {{ row.data[column.id] }}
         </span>
         
         <strong class="responsive" *ngIf="column.checkbox">
           {{ column.checkbox.singleName }}
         </strong>        
-        <input type="checkbox" *ngIf="column.checkbox" [checked]="exists(row)" (change)="toggle(row)">
+        <input type="checkbox" *ngIf="column.checkbox" [checked]="exists(row.data)" (change)="toggle(row.data)">
       </td>
       <td class="column action" *ngIf="data?.actions">
         <div *ngFor="let action of data?.actions" class="action-buttons">
           <button class="btn btn-flat btn-block {{ action.class }}"
           [class.btn-social]="!!action.icon"
-          (click)="action.handler(row)"
-          *ngIf="action.condition ? action.condition(row) : true">
+          (click)="action.handler(row.data)"
+          *ngIf="action.condition ? action.condition(row.data) : true">
             <i *ngIf="action.icon" class="{{ action.icon }}"></i>
             {{ action.name }}
           </button>
         </div>
+      </td>
+    </tr>
+    <tr class="row" *ngIf="data?.hasInfoInLine && row.data.infoStatus">
+      <td [attr.colspan]="data?.columns.length + (data?.actions ? 1 : 0)" class="column">
+        <div [innerHtml]="row.infoInline"></div>
       </td>
     </tr>
     <tr *ngIf="!data?.rows?.length"  class="row">
