@@ -51,7 +51,9 @@
         <div [innerHtml]="row.infoInline"></div>
       </td>
     </tr>
-    <tr *ngIf="!data?.rows?.length"  class="row">
+  </tbody>
+  <tbody *ngIf="!data?.rows?.length">
+    <tr class="row">
       <td class="column text-center" [attr.colspan]="data?.columns.length + 1">
         {{data?.noRowsMsg || 'Nenhum registro exibido'}}
       </td>
