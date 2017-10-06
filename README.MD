@@ -44,8 +44,8 @@ public data: TableContent = {
       {id: 'age', name: 'Age'}
     ],
     rows: [
-      {name: 'Mateus', age: '23'},
-      {name: 'Lucas', age: '26'}
+      { data: { name: 'Mateus', age: '23' }},
+      { data: { name: 'Lucas', age: '26'}}
     ],
     actions: [
       {name: 'Add Something', class: 'btn btn-primary', icon: 'fa fa-plus',
