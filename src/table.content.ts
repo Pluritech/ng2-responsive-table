@@ -28,6 +28,7 @@ export interface TableButton {
     icon: string;
     handler(row: any): void;
     condition?(row: any): boolean;
+    disabled?(row: any): boolean;
 }
 
 export interface TableCheckbox {

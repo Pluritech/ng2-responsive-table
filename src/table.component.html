@@ -35,6 +35,7 @@
         <div *ngFor="let action of data?.actions" class="action-buttons">
           <button class="btn btn-flat btn-block {{ action.class }}"
           [class.btn-social]="!!action.icon"
+          [disabled]="action.disabled ? action.disabled(row.data) : false"
           (click)="action.handler(row)"
           *ngIf="action.condition ? action.condition(row.data) : true">
             <i *ngIf="action.icon" class="{{ action.icon }}"></i>
