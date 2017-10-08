@@ -53,7 +53,11 @@ public data: TableContent = {
         console.log('condition', row);
         return true;
       },
-      handler: row => {
+      disabled: row => {
+        console.log('disabled', row);
+        return true;
+      },
+      handler: row => {
         console.log('handler', row);
       }}
     ]
