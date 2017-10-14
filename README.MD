@@ -71,9 +71,10 @@ The actions columns, receive the following
  Field | Description
 ------ | ----------- 
 name   | Text of the button
-class  | css class to be applied to button
-icon   | font-awesome icon to be applied to button
-condition | a function who can receive the row, return a boolean who indicates if the button should be displayed
+class  | css class name to be applied to button
+icon   | css class name icon to be applied to button
+condition | a function which receives a row and returns a boolean indicating whether this current action button should be displayed
+disabled | a function which receives a row and determines whether this current action button should be disabled
 handler | a function who can receive the row and will be executed when the button is clicked
 
 You can also set noRowsMsg to show when no there data on table. Default is: Nenhum registro exibido
