@@ -34,7 +34,7 @@ This library depends of bootstrap styles, so, ensure that is correctly installed
 ### Usage
 In your component template, do the following:
 ```html
-<ng-table [data]=data></ng-table>
+<ng-table [data]="data"></ng-table>
 ```
 So, in the typescript you will need:
 ```typescript
