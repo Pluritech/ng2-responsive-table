@@ -1,7 +1,7 @@
 <table class="table table-striped table-bordered">
   <thead class="head">
     <tr class="row">
-      <td class="column" *ngFor="let column of data?.columns" [ngClass]="{'checkbox-column' : column.checkbox}">        
+      <td [attr.width]="column.width" class="column" *ngFor="let column of data?.columns" [ngClass]="{'checkbox-column' : column.checkbox}">        
         <strong *ngIf="!column.checkbox">{{ column.name }}</strong>
         <input type="checkbox" *ngIf="column.checkbox" 
           (change)="toggle()"
@@ -17,7 +17,7 @@
   </thead>
   <tbody class="body" *ngFor="let row of data?.rows; let i = index">
     <tr class="row" >
-      <td class="column" *ngFor="let column of data?.columns">
+      <td [attr.width]="column.width" class="column" *ngFor="let column of data?.columns">
         <strong class="responsive" *ngIf="!column.checkbox">
           {{ column.name }}
         </strong>

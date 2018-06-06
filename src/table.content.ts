@@ -20,6 +20,7 @@ export interface TableColumn {
     id: string;
     checkbox?: TableCheckbox;
     hasCustomColor?: true;
+    width?: string;
 }
 
 export interface TableButton {

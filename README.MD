@@ -40,7 +40,7 @@ So, in the typescript you will need:
 ```typescript
 public data: TableContent = {
     columns: [
-      {id: 'name', name: 'Name'},
+      {id: 'name', name: 'Name', width: '50%'},
       {id: 'age', name: 'Age'}
     ],
     rows: [
