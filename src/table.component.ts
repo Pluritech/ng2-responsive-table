@@ -45,7 +45,8 @@ export class TableComponent implements OnInit {
     if (this.selected.length) {
       this.selected.splice(0, this.selected.length);
     } else {
-      this.selected = this.selected.concat(this.data.rows);
+      const newSelecteds = this.data.rows.map(row => row.data);
+      this.selected = this.selected.concat(newSelecteds);
     }
     this.selectedChangeAll.emit({
       selecteds: this.selected,
